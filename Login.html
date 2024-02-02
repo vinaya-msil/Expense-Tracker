@@ -8,34 +8,23 @@
 </head>
 <body>
     <div class="main" id="main">
-        <h1 class="heading"><center><button id="loginHead" class="loginHead loginAndSignup" onclick="displayForm('login')">Login</button>
-            <button id="signupHead" class="signupHead loginAndSignup" onclick="displayForm('signup')">SignUp</button></center></h1>
-        <section class="inputFieldsOfLogin" id="inputFieldsOfLogin">
-            <center>
-                <label for="userNameLogin">Username</label>
-                <input type="text" id="userNameLogin"><br>
-                <label for="passwordLogin">Password</label>
-                <input type="password" id="passwordLogin"><br>
-                <button class="login button" id="login" onclick="validateLogin()">Login</button>
-            </center>
-        </section>
-        <!--  sign up -->
-        <section class="inputFieldsOfSignup" id="inputFieldsOfSignup">
-            <center>
-                <label for="userNameSignup">Username</label>
-                <input type="text" id="userNameSignup"><br>
-                <label for="nameSignup">Name</label>
-                <input type="text" id="nameSignup"><br>
-                <label for="passwordSignup">Password</label>
-                <input type="password" id="passwordSignup"><br>
-                <label for="confirmPasswordSignup">Confirm Password</label>
-                <input type="password" id="confirmPasswordSignup"><br>
-                <button class="signup button" id="signup" onclick="validateSignup()">SignUp</button>
-            </center>
-        </section>
+            
+                
+            <section class="inputFieldsOfLogin" id="inputFieldsOfLogin">
+                <center>
+                    <h1><center>Login</center></h1>
+                    <br><br>
+                    <label for="userNameLogin">Username</label><br>
+                    <input type="text" id="userNameLogin"><br>
+                    <label for="passwordLogin">Password</label><br>
+                    <input type="password" id="passwordLogin"><br>
+                    <button class="login button" id="login" onclick="validateLogin()">Login</button>
+                    <p>Dont have a account <a href="SignUp.html">SignUp</a></p>
+                </center>
+            </section>
     </div>
 
    
 </body>
-<script src="home.js"></script>
+<script src="login.js" ></script>
 </html>

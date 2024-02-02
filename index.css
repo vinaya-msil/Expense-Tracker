@@ -1,0 +1,199 @@
+button{
+    padding: 4px;
+    border-radius: 10px;
+    background-color: white;
+    color: #333;
+    margin: 2px;
+}
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+}
+#popup{
+    overflow: auto;
+}
+h2 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: #317773;
+    color: #fff;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+#usernameHeading{
+    margin: 10px;
+    border-radius: 15px;
+}
+.addTransactionCard,
+.transactions-card {
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 10px ;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+#addTransactionButton {
+    border-radius: 20px;
+    font-size: 24px;
+    background-color: #49606d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.card h2,
+.card h1 {
+    color: #333;
+}
+
+.tableSection {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#detailsTableContainer {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+#total{
+    height: 40px;
+    width: 40px;
+    background-color: #333;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 2px solid grey;
+}th{
+    color: white;
+}
+#totalInTable{
+    text-align: start;
+}
+.columnSearch {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.nextAndPrevButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #42545f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#popupForm{
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#popupForm > button,input,select,date{
+    margin: 10px;
+}
+#popupForm>input{
+    width:200px;
+    max-width: 40vw;
+}
+@media screen and (max-width: 600px) {
+    .main {
+        padding: 5px;
+    }
+
+    .addTransactionCard,
+    .transactions-card {
+        width: 100%;
+    }
+
+    #detailsTableContainer {
+        overflow-x: auto;
+    }
+}
+.transactions-card h2{
+    color: white;
+}
+
+#headings {
+    border-radius: 15px;
+    width: 100%;
+    overflow: hidden; /* Clear floats */
+  }
+
+  /* Style for the h2 element */
+  #headings h2 {
+    position: relative; /* Position relative for absolute positioning of spans */
+    margin: 0; /* Remove default margin */
+  }
+
+  /* Style for the left span */
+  #TransactionHistory {
+    margin-left: 5px;
+    left: 0;
+  }
+  #budget {
+    position: absolute;
+    right: 0;
+  }
+/* popupSection */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #00aeff;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+/* .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+} */
+
+.popup-btn {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+th{
+    background-color: #333;
+}
+
+/* Hex codes: Lavender #E2D1F9, Teal #317773 */

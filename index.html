@@ -3,19 +3,191 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Expense Tracker</title>
-        <link rel="stylesheet" href="home.css">
+        <title>Home</title>
+        <link rel="stylesheet" href="index.css">
 </head>
 <body>
-        <section class="budgetsection">
-                <h1 class="UserNameInIndex" id="UserNameInIndex"><span id="UserNameHead">UserName</span>'s Expense Tracker</h1><br>
-                <section>
-                        <ht>OverView</ht>
-                </section>
-                <hr>
-                <h2>Budget</h2><h4>Amount Here</h4>
+        
+<h2 id="usernameHeading">Hello : <span id="UserNameHead"></span></h2>
+<section class="main ">
+  
+<div class="addTransactionCard addTransactionSection">
+        <button id="addTransactionButton" onclick="openPopup()">+</button>
+        <h4>AddTransaction</h4>
+</div>
+<!--transactions division-->
+<div class="card transactions-card">
+        
+        <div id="headings">
+                <h2>
+                  <span id="TransactionHistory">Transaction History </span>
+                  
+                </h2>
+        </div>
+        <br>
+        
+        <section class="tableSection" id="tableSection">
+                <h1>Budget ₹ 10000<span id="budget"></span></h1>
+        <br><br>
+        <!-- // show or hide button -->
+        <label for="dateFilter"><b>View Data From Date</b></label>
+        <input type="date" id="dateFilter">
+        
+        
+        <br><br>
+        <!--nextAndPrevButtons-->
+        <section class="nextAndPrevButtons">
+                <button class="button" id="prevButton" onclick="prevEntries()">Prev</button>
+                <select class="button" name="noOfEntries" id="noOfEntries">
+                        <option value=5>5</option>
+                        <option value=10>10</option>
+                        <option value=15>15</option>
+                        <option value=25>25</option>
+                </select>
+                <select class="button" name="noOfEntries" id="months">
+                        <optgroup>
+                                <option value='jan'>January</option>
+                                <option value='feb'>February</option>
+                                <option value='mar'>March</option>
+                                <option value='apr'>April</option>
+                                <option value='may'>May</option>
+                                <option value='jun'>June</option>
+                                <option value='jul'>July</option>
+                                <option value='aug'>August</option>
+                                <option value='sep'>September</option>
+                                <option value='oct'>October</option>
+                                <option value='nov'>November</option>
+                                <option value='dec'>December</option>
+                        </optgroup>
+
+                </select>
+                <button class="button" id="nextButton" onclick="nextEntries()">Next</button>
+        </section>
+        <div id="detailsTableContainer">
+                <table id="detailsTable" class="detailsTable">
+                
+                <thead id="tableHead">
+                <th id="nameHeadInTable" >Transaction Name<br><input class="columnSearch" 
+                        id="nameSearch" type="text" placeholder="search Transaction"></th>
+                <th id="amountInTable">Amount Spent<br><input class="columnSearch" 
+                        id="amountSearch" type="text" placeholder="search Amount"></th>
+                <th id="categoryInTable">Category<br><input class="columnSearch"
+                        id="categorySearch" type="text" placeholder="search Category"></th>
+                <th id="dateAndTime" onclick="sortTable(6)" >Created / Edited<br><input class="columnSearch"
+                        id="dateSearch" type="text" placeholder="search date and time"></th>
+                <th id="editInTable">Edit / Delete</th>
+                </thead>
+                <tbody id="tableBody"> 
+                        <tr>
+                                <td>Transaction 1</td>
+                                <td>₹ 1000</td>
+                                <td>Category 1</td>
+                                <td>01/02/2024<br>14:13</td>
+                                <td>
+                                <button class="edit" onclick="openPopup()">Edit</button>
+                                <button class="delete" onclick="confirmDelete()">Delete</button>
+                        </td>
+                        </tr>
+                        <tr>
+                                <td>Transaction 1</td>
+                                <td>₹ 1000</td>
+                                <td>Category 2</td>
+                                <td>01/02/2024<br>14:13</td>
+                                <td>
+                                <button class="edit">Edit</button>
+                                <button class="delete" onclick="confirmDelete()">Delete</button>
+                        </td>
+                        </tr>
+                        <tr>
+                                <td>Transaction 1</td>
+                                <td>₹ 1000</td>
+                                <td>Category 4</td>
+                                <td>01/02/2024<br>14:13</td>
+                                <td>
+                                <button class="edit">Edit</button>
+                                <button class="delete" onclick="confirmDelete()">Delete</button>
+                        </td>
+                        </tr>
+                        <tr>
+                                <td>Transaction 1</td>
+                                <td>₹ 1000</td>
+                                <td>Category 3</td>
+                                <td>01/02/2024<br>14:13</td>
+                                <td>
+                                <button class="edit">Edit</button>
+                                <button class="delete" onclick="confirmDelete()">Delete</button>
+                        </td>
+                        </tr>
+
+                </tbody>
+                <tfoot>
+                        <th>Transaction Name</th>
+                        <th>Amount Spent</th>
+                        <th>Category</th>
+                        <th>Created / Edited</th>
+                        <th>Edit / Delete</th>
+                        
+                </tfoot>
+                
+                <tr>
+                        <th>
+                                Total
+                        </th>
+                        <td id="totalInTable" colspan="4">
+                                <b>₹ 4000</b>
+                        </td>
+                </tr>
+                </table>
+                
+
+                
+        </div>
         </section>
         
-        <script src="home.js"></script>
+
+
+
+</div>
+
+</section>
+        
+<!--popup input form section-->
+<!-- 
+    <div class="overlay" id="overlay"></div> -->
+
+    <div class="popup" id="popup">
+        <h2>Add Transaction</h2>
+        <form class="popupForm" id="popupForm">
+            <!-- Your form fields go here -->
+            <label for="transactionName">Enter Title</label><br>
+            <input type="text" id="transactionName" required><br>
+
+            <label for="transactionAmount">Amount</label><br>
+            <input type="number" id="transactionAmount"required><br>
+                
+                <label for="categoryInput">Category</label><br>
+            <select id="categoryInput">
+                <optgroup>
+                        <option id="categoryShopping">Shopping</option>
+                        <option id="categoryGroceries">Groceries</option>
+                        <option id="categoryEntertainment">Entertainment</option>
+                        <option id="categoryBillsAndFees">Bills And Fees</option>
+                        <option id="categoryWork">Work</option>
+                        <option id="categoryTravel">Travel</option>
+                        <option id="categoryFood">Food</option>
+                </optgroup>
+            </select>
+            <br>
+            <label for="dateInputInTransactionForm">select date</label><br>
+            <input id="dateInputInTransactionForm" type="date">
+            <br>
+            <label for="budgetInput">budget</label><br>
+            <input value="10000" id="budgetInput" type="number"><button id="editBudget">edit</button><br>
+            <center><button>Submit</button></center>
+        </form>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+        <script src="index.js"></script>
 </body>
 </html>
