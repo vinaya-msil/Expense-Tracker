@@ -2,7 +2,6 @@ let userNameSignup = document.getElementById('userNameSignup');
 let nameSignup = document.getElementById('nameSignup');
 let passwordSignup = document.getElementById('passwordSignup');
 let confirmPasswordSignup = document.getElementById('confirmPasswordSignup');
-let budgetInput = document.getElementById('budgetInput');
 userNameSignup.addEventListener('input',()=>{
     userNameSignup.value = userNameSignup.value.replace(/[^a-zA-Z\s]/g,'');
 })

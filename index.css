@@ -77,6 +77,8 @@ table {
 }
 th, td {
     padding: 15px;
+    overflow-wrap: break-word;
+    max-width: 20vw;
     text-align: left;
     border: 2px solid grey;
 }th{
@@ -93,6 +95,7 @@ th, td {
 
 .nextAndPrevButtons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 10px;
 }
@@ -136,6 +139,11 @@ th, td {
         overflow-x: auto;
     }
 }
+
+
+
+
+
 .transactions-card h2{
     color: white;
 }
@@ -196,4 +204,7 @@ th{
     background-color: #333;
 }
 
+.prevButton,.nextButton{
+    background-color: #171a24  !important;
+}
 /* Hex codes: Lavender #E2D1F9, Teal #317773 */
